@@ -1,0 +1,46 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "gitCompany": "",
+    "baseName": "test",
+    "packageName": "com.src.app",
+    "packageFolder": "com/src/app",
+    "serverPort": 8080,
+    "serviceDiscoveryType": "eureka",
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "enableSwaggerCodegen": false,
+    "messageBroker": false,
+    "buildTool": "maven",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [
+      "gatling"
+    ],
+    "enableTranslation": false,
+    "nativeLanguage": "fr",
+    "languages": [
+      "en"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "6.5.0",
+    "jwtSecretKey": "OWVmMGVlYTU1YzZhOGFlN2M0YjNlYWZhY2IwYTUwYjYwZWJlMjA5MmU4NDA4N2ZiOWVkMGI3OGU1NzFhODcxZjgxNmFmMmYyNjNkNDc1MmI0ZDFhYWQwZmU4MWQzZmQ3ZjZjZjIwNTE5MTNiOTUzZGU4NDM3YTQwNGIzOTBjNmM=",
+    "embeddableLaunchScript": false,
+    "clientTheme": "none",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "blueprints": []
+  },
+  "git-provider": "GitHub",
+  "git-company": "GKXXX",
+  "repository-name": "PPE_test"
+}
