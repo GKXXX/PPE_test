@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="coach">
+            <h2><span>Coach</span> {{coach.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Nom</span></dt>
+                <dd>
+                    <span>{{coach.nom}}</span>
+                </dd>
+                <dt><span>Jeu</span></dt>
+                <dd>
+                    <span>{{coach.jeu}}</span>
+                </dd>
+                <dt><span>Prix Jour</span></dt>
+                <dd>
+                    <span>{{coach.prixJour}}</span>
+                </dd>
+                <dt><span>Telephone</span></dt>
+                <dd>
+                    <span>{{coach.telephone}}</span>
+                </dd>
+                <dt><span>Dispo</span></dt>
+                <dd>
+                    <span>{{coach.dispo}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/coach', coach.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

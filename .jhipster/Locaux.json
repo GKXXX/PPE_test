@@ -1,0 +1,53 @@
+{
+    "name": "Locaux",
+    "fields": [
+        {
+            "fieldName": "adresse",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ville",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telephone",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "taille",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "prixJour",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "reservation",
+            "otherEntityRelationshipName": "locaux",
+            "relationshipName": "telephone"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "equipement",
+            "otherEntityRelationshipName": "nom",
+            "relationshipName": "equipement",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191114174654",
+    "entityTableName": "locaux",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

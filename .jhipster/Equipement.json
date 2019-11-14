@@ -1,0 +1,35 @@
+{
+    "name": "Equipement",
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prixJour",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "locaux",
+            "otherEntityRelationshipName": "equipement",
+            "relationshipName": "nom"
+        }
+    ],
+    "changelogDate": "20191114174656",
+    "entityTableName": "equipement",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

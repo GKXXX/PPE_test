@@ -1,0 +1,69 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="reservation">
+            <h2><span>Reservation</span> {{reservation.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Numero ID</span></dt>
+                <dd>
+                    <span>{{reservation.numeroID}}</span>
+                </dd>
+                <dt><span>Equipe</span></dt>
+                <dd>
+                    <span>{{reservation.equipe}}</span>
+                </dd>
+                <dt><span>Coach</span></dt>
+                <dd>
+                    <span>{{reservation.coach}}</span>
+                </dd>
+                <dt><span>Local</span></dt>
+                <dd>
+                    <span>{{reservation.local}}</span>
+                </dd>
+                <dt><span>Duree</span></dt>
+                <dd>
+                    <span>{{reservation.duree}}</span>
+                </dd>
+                <dt><span>Prix Total</span></dt>
+                <dd>
+                    <span>{{reservation.prixTotal}}</span>
+                </dd>
+                <dt><span>Date Debut</span></dt>
+                <dd>
+                    <span>{{reservation.dateDebut}}</span>
+                </dd>
+                <dt><span>Locaux</span></dt>
+                <dd>
+                    <div *ngIf="reservation.locaux">
+                        <a [routerLink]="['/locaux', reservation.locaux?.id, 'view']">{{reservation.locaux?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Equipe</span></dt>
+                <dd>
+                    <div *ngIf="reservation.equipe">
+                        <a [routerLink]="['/equipe', reservation.equipe?.id, 'view']">{{reservation.equipe?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Coach</span></dt>
+                <dd>
+                    <div *ngIf="reservation.coach">
+                        <a [routerLink]="['/coach', reservation.coach?.id, 'view']">{{reservation.coach?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/reservation', reservation.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

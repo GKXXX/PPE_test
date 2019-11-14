@@ -1,0 +1,52 @@
+{
+    "name": "Coach",
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "jeu",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prixJour",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "telephone",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dispo",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "coaching",
+            "otherEntityRelationshipName": "coach",
+            "relationshipName": "telephone"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "reservation",
+            "otherEntityRelationshipName": "coach",
+            "relationshipName": "telephone"
+        }
+    ],
+    "changelogDate": "20191114174655",
+    "entityTableName": "coach",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,63 @@
+
+entity Locaux {
+	Adresse String,
+	Ville String,
+	Telephone Long required,
+    Taille Long,
+    PrixJour Long
+}
+
+entity Coach {
+	Nom String,
+    Jeu String,
+    PrixJour Long,
+    Telephone Long required,
+    Dispo Boolean
+}
+
+entity Equipement {
+	Type String,
+	Nom String,
+    PrixJour Long
+}
+
+entity Equipe {
+	Nom String,
+    Jeu String,
+	Taille Long,
+	Telephone Long required,
+}
+
+entity Coaching {
+	Type String,
+    Jeu String,
+	Prix Long,
+}
+
+entity Reservation {
+	NumeroID Long required ,
+	Equipe String,
+    Coach String,
+    Local String,
+    Duree Long,
+	PrixTotal Long,
+    DateDebut LocalDate
+}
+
+relationship OneToMany {
+	Locaux{Telephone} to Reservation
+}
+relationship OneToMany {
+ 	Coach{Telephone} to Coaching
+}
+
+relationship OneToMany {
+	Equipement{Nom} to Locaux
+}
+
+relationship OneToMany {
+	Equipe{Telephone} to Reservation
+}
+relationship OneToMany {
+	Coach{Telephone} to Reservation
+}

@@ -1,0 +1,66 @@
+<div>
+    <h2 id="page-heading">
+        <span>Coaches</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-coach" [routerLink]="['/coach/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create a new Coach
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="coaches?.length === 0">
+        <span>No coaches found</span>
+    </div>
+    <div class="table-responsive" *ngIf="coaches?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span>ID</span></th>
+            <th scope="col" ><span>Nom</span></th>
+            <th scope="col" ><span>Jeu</span></th>
+            <th scope="col" ><span>Prix Jour</span></th>
+            <th scope="col" ><span>Telephone</span></th>
+            <th scope="col" ><span>Dispo</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let coach of coaches ;trackBy: trackId">
+                <td><a [routerLink]="['/coach', coach.id, 'view' ]">{{coach.id}}</a></td>
+                <td>{{coach.nom}}</td>
+                <td>{{coach.jeu}}</td>
+                <td>{{coach.prixJour}}</td>
+                <td>{{coach.telephone}}</td>
+                <td>{{coach.dispo}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/coach', coach.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/coach', coach.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/coach', { outlets: { popup: coach.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

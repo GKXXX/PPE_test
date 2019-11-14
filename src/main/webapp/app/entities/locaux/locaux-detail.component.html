@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="locaux">
+            <h2><span>Locaux</span> {{locaux.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Adresse</span></dt>
+                <dd>
+                    <span>{{locaux.adresse}}</span>
+                </dd>
+                <dt><span>Ville</span></dt>
+                <dd>
+                    <span>{{locaux.ville}}</span>
+                </dd>
+                <dt><span>Telephone</span></dt>
+                <dd>
+                    <span>{{locaux.telephone}}</span>
+                </dd>
+                <dt><span>Taille</span></dt>
+                <dd>
+                    <span>{{locaux.taille}}</span>
+                </dd>
+                <dt><span>Prix Jour</span></dt>
+                <dd>
+                    <span>{{locaux.prixJour}}</span>
+                </dd>
+                <dt><span>Equipement</span></dt>
+                <dd>
+                    <div *ngIf="locaux.equipement">
+                        <a [routerLink]="['/equipement', locaux.equipement?.id, 'view']">{{locaux.equipement?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/locaux', locaux.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
