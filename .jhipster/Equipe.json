@@ -1,0 +1,42 @@
+{
+    "name": "Equipe",
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "jeu",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "taille",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "telephone",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "reservation",
+            "otherEntityRelationshipName": "equipe",
+            "relationshipName": "telephone"
+        }
+    ],
+    "changelogDate": "20191114174657",
+    "entityTableName": "equipe",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

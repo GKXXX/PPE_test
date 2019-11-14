@@ -1,0 +1,36 @@
+{
+    "name": "Coaching",
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "jeu",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prix",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "coach",
+            "otherEntityRelationshipName": "telephone",
+            "relationshipName": "coach",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191114174658",
+    "entityTableName": "coaching",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

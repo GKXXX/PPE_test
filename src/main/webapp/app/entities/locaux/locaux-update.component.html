@@ -1,0 +1,66 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-locaux-heading">Create or edit a Locaux</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_adresse">Adresse</label>
+                    <input type="text" class="form-control" name="adresse" id="field_adresse"
+                           formControlName="adresse"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_ville">Ville</label>
+                    <input type="text" class="form-control" name="ville" id="field_ville"
+                           formControlName="ville"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_telephone">Telephone</label>
+                    <input type="number" class="form-control" name="telephone" id="field_telephone"
+                           formControlName="telephone"/>
+                    <div *ngIf="editForm.get('telephone').invalid && (editForm.get('telephone').dirty || editForm.get('telephone').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('telephone').errors.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('telephone')?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_taille">Taille</label>
+                    <input type="number" class="form-control" name="taille" id="field_taille"
+                           formControlName="taille"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_prixJour">Prix Jour</label>
+                    <input type="number" class="form-control" name="prixJour" id="field_prixJour"
+                           formControlName="prixJour"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_equipement">Equipement</label>
+                    <select class="form-control" id="field_equipement" name="equipement" formControlName="equipement">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="equipementOption.id === editForm.get('equipement').value?.id ? editForm.get('equipement').value : equipementOption" *ngFor="let equipementOption of equipements; trackBy: trackEquipementById">{{equipementOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

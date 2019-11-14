@@ -1,0 +1,69 @@
+{
+    "name": "Reservation",
+    "fields": [
+        {
+            "fieldName": "numeroID",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "equipe",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "coach",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "local",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "duree",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "prixTotal",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "dateDebut",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "locaux",
+            "otherEntityRelationshipName": "telephone",
+            "relationshipName": "locaux",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "equipe",
+            "otherEntityRelationshipName": "telephone",
+            "relationshipName": "equipe",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "coach",
+            "otherEntityRelationshipName": "telephone",
+            "relationshipName": "coach",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191114174659",
+    "entityTableName": "reservation",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
